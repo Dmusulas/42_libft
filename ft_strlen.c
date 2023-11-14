@@ -6,11 +6,11 @@
 /*   By: dmusulas <dmusulas@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 12:36:15 by dmusulas          #+#    #+#             */
-/*   Updated: 2023/11/13 12:59:46 by dmusulas         ###   ########.fr       */
+/*   Updated: 2023/11/13 15:26:58 by dmusulas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {
