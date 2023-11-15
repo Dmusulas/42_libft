@@ -1,34 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmusulas <dmusulas@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/12 13:28:52 by dmusulas          #+#    #+#             */
-/*   Updated: 2023/11/15 18:38:45 by dmusulas         ###   ########.fr       */
+/*   Created: 2023/11/15 19:05:35 by dmusulas          #+#    #+#             */
+/*   Updated: 2023/11/15 19:31:40 by dmusulas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int c);
-int	ft_isalpha(int c);
-
-int	ft_isalnum(int c)
+int	ft_isspace(char c)
 {
-	if (ft_isalpha(c) || ft_isdigit(c))
+	if (c == ' ' || c == '\f' || c == '\n' 
+		|| c == '\r' || c == '\t' || c == '\v')
 		return (1);
 	else
 		return (0);
 }
-/*
-#include <assert.h>
 
-int	main(void)
+int	ft_atoi(const char *nptr)
 {
-	assert(ft_isalnum('c') == 1);
-	assert(ft_isalnum('1') == 1);
-	assert(ft_isalnum(';') == 0);
-	assert(ft_isalnum('!') == 0);
-	return (1);
+	int	nbr;
+	int	i;
+	int	sign;
+
+	nbr = 0;
+	sign = 1;
+	i = 0;
+	while (ft_isspace(nptr[i]) == 1)
+	{
+		i++;
+	}
+	if (nptr[i] == '-')
+	{
+		sign *= -1;
+		i++;
+	}
+	else if (nptr[i] == '+')
+		i++;
+	while (nptr[i] > '0' && nptr[i] <= '9')
+	{
+		nbr = nbr * 10 + nptr[i] - '0';
+		i++;
+	}
+	return (nbr * sign);
 }
-*/

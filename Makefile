@@ -21,8 +21,9 @@ SRCS =	ft_bzero.c\
 		ft_strrchr.c\
 		ft_tolower.c\
 		ft_toupper.c\
-		ft_memcmp.c
-
+		ft_memcmp.c\
+		ft_strnstr.c\
+		ft_atoi.c
 all: $(NAME)
 
 %.o: %.c
