@@ -6,7 +6,7 @@
 /*   By: dmusulas <dmusulas@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 16:35:44 by dmusulas          #+#    #+#             */
-/*   Updated: 2023/11/16 16:48:18 by dmusulas         ###   ########.fr       */
+/*   Updated: 2023/11/16 18:37:35 by dmusulas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strdup(const char *s)
 {
 	char	*new;
 
-	new = malloc(sizeof(char) * (ft_strlen(s) + 1));
+	new = ft_calloc(sizeof(char), (ft_strlen(s) + 1));
 	if (!new)
 		return (NULL);
 	ft_memcpy(new, s, ft_strlen(s) + 1);
