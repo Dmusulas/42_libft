@@ -6,7 +6,7 @@
 /*   By: dmusulas <dmusulas@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 20:14:50 by dmusulas          #+#    #+#             */
-/*   Updated: 2023/11/14 20:38:22 by dmusulas         ###   ########.fr       */
+/*   Updated: 2023/11/16 16:16:50 by dmusulas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,16 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	if (!(*s))
-		return ((char *)s);
+	char	char_c;
+
+	char_c = (char) c;
 	while (*s)
 	{
-		if (*s == c)
+		if (*s == char_c)
 			return ((char *)s);
 		s++;
 	}
-	if (*s == c)
+	if (*s == char_c)
 		return ((char *)s);
 	return (NULL);
 }
@@ -42,6 +43,8 @@ char	*ft_strchr(const char *s, int c)
 // int main(void)
 // {
 // 	test("Hello World!", 'W');
+// 	test("Hello", 'e');
+// 	test("Hello", '\0');
 // 	test("", 0);
 // 	test("Hello world!", 0); //testing if null byte is seeked
 // 	test(0, 0); //segfault is expected

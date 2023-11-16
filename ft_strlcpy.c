@@ -6,7 +6,7 @@
 /*   By: dmusulas <dmusulas@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 11:53:52 by dmusulas          #+#    #+#             */
-/*   Updated: 2023/11/14 12:03:30 by dmusulas         ###   ########.fr       */
+/*   Updated: 2023/11/16 16:54:33 by dmusulas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,19 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	size_t	len;
+	size_t	i;
+	size_t	src_len;
 
-	len = 0;
-	if (size <= 0)
-		return (0);
-	while (len < size - 1)
+	i = 0;
+	src_len = ft_strlen(src);
+	if (size >= src_len + 1)
+		ft_memcpy(dst, src, src_len + 1);
+	else if (size)
 	{
-		dst[len] = src[len];
-		len++;
+		ft_memcpy(dst, src, size - 1);
 	}
-	dst[len++] = '\0';
-	return (len);
+	dst[i++] = '\0';
+	return (src_len);
 }
 // #include <stdio.h>
 // #include <bsd/string.h> // also need to compile with -lbsd

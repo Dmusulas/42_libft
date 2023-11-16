@@ -6,7 +6,7 @@
 /*   By: dmusulas <dmusulas@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 12:36:15 by dmusulas          #+#    #+#             */
-/*   Updated: 2023/11/15 12:20:16 by dmusulas         ###   ########.fr       */
+/*   Updated: 2023/11/15 22:12:34 by dmusulas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,6 @@ size_t	ft_strlen(const char *s)
 // 	}
 // 	else
 // 	{
-// 		printf("Please provide only one argument to this\
-// program - a test string.\n");
-// 		printf("Alternatively provide argument --auto \
-// to execute automatic testing.");
 // 	}
 // 	return (1);
 // }

@@ -6,7 +6,7 @@
 /*   By: dmusulas <dmusulas@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 20:38:52 by dmusulas          #+#    #+#             */
-/*   Updated: 2023/11/15 12:33:43 by dmusulas         ###   ########.fr       */
+/*   Updated: 2023/11/16 16:16:57 by dmusulas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 char	*ft_strrchr(const char *s, int c)
 {
 	size_t	strl;
+	char	char_c;
 
 	strl = ft_strlen(s);
-	if (!(*s))
-		return ((char *)s);
+	char_c = (char) c;
 	while (strl)
 	{
-		if ((int)s[strl] == c)
+		if (s[strl] == char_c)
 			return ((char *)(&s[strl]));
 		strl--;
 	}
-	if ((int)s[strl] == c)
+	if ((int)s[strl] == char_c)
 		return ((char *)s);
 	return (NULL);
 }
