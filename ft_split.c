@@ -6,7 +6,7 @@
 /*   By: dmusulas <dmusulas@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 17:16:59 by dmusulas          #+#    #+#             */
-/*   Updated: 2023/11/17 21:12:59 by dmusulas         ###   ########.fr       */
+/*   Updated: 2023/11/17 21:42:54 by dmusulas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,12 @@
 static int		count_words(char const *s, char c);
 static char		*get_word(char const *s, char c);
 static size_t	strlen_sep(const char *s, char c);
+static char		**freedom(char **arr, int f);
 
 char	**ft_split(char const *s, char c)
 {
 	char	**array_of_words;
+	char	*word;
 	int		i;
 
 	i = 0;
@@ -31,7 +33,10 @@ char	**ft_split(char const *s, char c)
 			s++;
 		if (*s != c && *s)
 		{
-			array_of_words[i] = get_word(s, c);
+			word = get_word(s, c);
+			if (!word)
+				return (freedom (array_of_words, i));
+			array_of_words[i] = word;
 			i++;
 		}
 		while (*s != c && *s)
@@ -92,6 +97,20 @@ static char	*get_word(char const *s, char c)
 	}
 	return (word);
 }
+
+static char	**freedom(char **arr, int f)
+{
+	int	i;
+
+	i = 0;
+	while (i < f)
+	{
+		free(arr[i]);
+		i++;
+	}
+	free(arr);
+	return (NULL);
+}
 // #include <stdio.h>
 // void	test_count_words(char const *s, char c)
 // {
@@ -110,6 +129,7 @@ static char	*get_word(char const *s, char c)
 // 		printf("The %i word is: '%s'\n", i, split[i]);
 // 		i++;
 // 	}
+// 	freedom(split, count_words(s, c) + 1);
 // 	printf("---- OVER --- \n");
 // }
 //
