@@ -37,6 +37,12 @@ SRCS =	ft_atoi.c\
 		ft_substr.c\
 		ft_tolower.c\
 		ft_toupper.c
+BONUS_OBJS = ${BONUS_SRCS:.c=.o}
+BONUS_SRCS = ft_lstnew.c\
+			 ft_lstiter.c\
+			 ft_lstadd_front.c\
+			 ft_lstsize.c\
+			 ft_lstlast.c
 all: $(NAME)
 
 %.o: %.c
@@ -44,6 +50,9 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(CCA) $(NAME) $(OBJS)
+
+bonus: $(BONUS_OBJS)
+	$(CCA) $(NAME) $(BONUS_OBJS)
 
 clean:
 	rm -f $(OBJS)
