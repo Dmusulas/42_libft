@@ -6,7 +6,7 @@
 /*   By: dmusulas <dmusulas@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 11:53:52 by dmusulas          #+#    #+#             */
-/*   Updated: 2023/11/16 16:58:46 by dmusulas         ###   ########.fr       */
+/*   Updated: 2023/11/18 18:15:55 by dmusulas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,10 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 
 	src_len = ft_strlen(src);
 	if (size >= src_len + 1)
-		ft_memcpy(dst, src, src_len + 1);
+	{
+		ft_memcpy(dst, src, src_len);
+		dst[src_len] = 0;
+	}
 	else if (size)
 	{
 		ft_memcpy(dst, src, size - 1);
