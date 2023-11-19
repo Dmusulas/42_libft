@@ -6,7 +6,7 @@
 /*   By: dmusulas <dmusulas@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 21:40:30 by dmusulas          #+#    #+#             */
-/*   Updated: 2023/11/15 17:42:35 by dmusulas         ###   ########.fr       */
+/*   Updated: 2023/11/19 18:21:01 by dmusulas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,10 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t	i;
 	char	*ptr;
 
-	i = 0;
 	ptr = s;
-	while (i < n)
-	{
-		*(ptr + i++) = '\0';
-	}
+	while (n--)
+		*(ptr++) = '\0';
 }
+// I test this function in ft_calloc.c

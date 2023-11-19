@@ -6,7 +6,7 @@
 /*   By: dmusulas <dmusulas@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 00:34:44 by dmusulas          #+#    #+#             */
-/*   Updated: 2023/11/18 00:49:25 by dmusulas         ###   ########.fr       */
+/*   Updated: 2023/11/19 18:14:01 by dmusulas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,17 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 // 	test = ft_strmapi("Rnpu cebwrpg bs gur", rot13_decrypt);
 // 	printf("%s", test);
 // 	free(test);
+//
+// 	char *test2 = ft_strmapi("", rot13_decrypt);
+// 	printf("%s", test2);
+// 	free(test2);
+//
+// 	char *test3 = ft_strmapi("Rnpu cebwrpg bs gur", NULL);
+// 	printf("%s", test3);
+// 	free(test3);
+//
+// 	char *test4 = ft_strmapi("", NULL);
+// 	printf("%s", test4);
+// 	free(test4);
 // 	return (1);
 // }
