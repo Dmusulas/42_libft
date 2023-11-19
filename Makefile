@@ -1,5 +1,5 @@
 CC = cc
-CCA = ar rcs
+CCA = ar rc
 CFLAGS = -Wall -Wextra -Werror
 NAME = libft.a
 OBJS = ${SRCS:.c=.o}
@@ -38,14 +38,15 @@ SRCS =	ft_atoi.c\
 		ft_tolower.c\
 		ft_toupper.c
 BONUS_OBJS = ${BONUS_SRCS:.c=.o}
-BONUS_SRCS = ft_lstnew.c\
-			 ft_lstiter.c\
+BONUS_SRCS = ft_lstadd_back.c\
 			 ft_lstadd_front.c\
-			 ft_lstsize.c\
-			 ft_lstlast.c\
-			 ft_lstadd_back.c\
 			 ft_lstclear.c\
-			 ft_lstdelone.c
+			 ft_lstdelone.c\
+			 ft_lstiter.c\
+			 ft_lstlast.c\
+			 ft_lstmap.c\
+			 ft_lstnew.c\
+			 ft_lstsize.c
 all: $(NAME)
 
 %.o: %.c
@@ -58,7 +59,7 @@ bonus: $(BONUS_OBJS)
 	$(CCA) $(NAME) $(BONUS_OBJS)
 
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS) $(BONUS_OBJS)
 
 fclean: clean
 	rm -f $(NAME)

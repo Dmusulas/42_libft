@@ -6,7 +6,7 @@
 /*   By: dmusulas <dmusulas@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 19:09:32 by dmusulas          #+#    #+#             */
-/*   Updated: 2023/11/16 19:24:36 by dmusulas         ###   ########.fr       */
+/*   Updated: 2023/11/19 13:21:30 by dmusulas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	s1_len = ft_strlen(s1);
 	s2_len = ft_strlen(s2);
 	total_len = s1_len + s2_len + 1;
-	new_s = ft_calloc(sizeof(char), total_len);
+	new_s = malloc(sizeof(char) * total_len);
 	if (!new_s)
 		return (NULL);
 	ft_memcpy(new_s, s1, s1_len);
