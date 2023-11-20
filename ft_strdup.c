@@ -6,7 +6,7 @@
 /*   By: dmusulas <dmusulas@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 16:35:44 by dmusulas          #+#    #+#             */
-/*   Updated: 2023/11/16 18:37:35 by dmusulas         ###   ########.fr       */
+/*   Updated: 2023/11/20 14:59:07 by dmusulas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,6 @@ char	*ft_strdup(const char *s)
 // {
 // 	test_strdup("abc");
 // 	test_strdup("");
+// 	test_strdup((const char *) NULL);
 // 	return 1;
 // }

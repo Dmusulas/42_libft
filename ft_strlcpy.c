@@ -6,7 +6,7 @@
 /*   By: dmusulas <dmusulas@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 11:53:52 by dmusulas          #+#    #+#             */
-/*   Updated: 2023/11/18 18:15:55 by dmusulas         ###   ########.fr       */
+/*   Updated: 2023/11/20 15:22:29 by dmusulas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,24 +31,43 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 }
 // #include <stdio.h>
 // #include <bsd/string.h> // also need to compile with -lbsd
+// #include <assert.h>
 //
-// size_t strlcpy(char *dst, const char *src, size_t siz);
+// static int	g_test_i = 0;
+//
+// void	test_strlcpy(char *dst, const char *src, size_t size)
+// {
+// 	size_t	r_ft;
+// 	size_t	r_org;
+// 	char *dst_org = ft_strdup(dst);
+//
+// 	printf("[Test %i]\n", g_test_i);
+// 	printf("The initial src is %s\n", src);
+// 	printf("The initial dest is %s\n", dst);
+// 	r_ft = ft_strlcpy(dst, src, size);
+// 	r_org = strlcpy(dst_org, src, size);
+// 	assert(r_ft == r_org);
+// 	assert(strcmp(dst_org, dst) == 0);
+// 	printf("[BSD] dst is %s\n", dst_org);
+// 	printf("[ORG] dst is %s\n", dst);
+// 	free(dst_org);
+// 	printf("TEST SUCEEDED!\n");
+// 	g_test_i++;
+// }
+//
+//
 // int main()
 // {
-// 	char src[] = "Volet";
-// 	char dest[] = "Beach";
-//
-//
-// 	printf("The initial src is %s\n", src);
-// 	printf("The initial dest is %s\n", dest);
-//
-// 	size_t len = ft_strlcpy(dest, src, 5);
-// 	printf("[MY FUN]Value after func src is %s\n", src);
-// 	printf("[MY FUN]Value after func dest  is %s\n", dest);
-// 	size_t length_t = strlcpy(dest, src, 5);
-// 	printf("[BSD ORIGINAL]Value after func src is %s\n", src);
-// 	printf("[BSD ORIGINAL]Value after func dest  is %s\n", dest);
-// 	printf("[MY FUN]Len of the src str  %zu\n", len);
-// 	printf("[BSD ORIGINAL]Len of the src str  %zu\n", length_t);
-//
+// 	char	s_test[20] = "Hello";
+// 	char	d_test[20] = "World!";
+// 	test_strlcpy(s_test, d_test, 12);
+// 	char	s_test1[20] = "Hello";
+// 	char	d_test1[0];
+// 	test_strlcpy(s_test1, d_test1, 6);
+// 	char	s_test2[0];
+// 	char	d_test2[0];
+// 	test_strlcpy(s_test2, d_test2, 0);
+// 	char	s_test3[10] = "Bye ";
+// 	char	d_test3[10] = "World!\0";
+// 	test_strlcpy(s_test3, d_test3, 10); //truncate
 // }
